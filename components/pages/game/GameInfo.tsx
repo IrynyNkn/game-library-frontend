@@ -25,14 +25,6 @@ const GameInfo = () => {
           {gameData?.genres ? (
             gameData.genres.map((genre, idx) => (
               <div
-                onClick={() =>
-                  router.push({
-                    pathname: '/',
-                    query: {
-                      genres: genre.id,
-                    },
-                  })
-                }
                 key={idx}
                 className={styles.tag}>
                 {genre.name}
@@ -45,14 +37,6 @@ const GameInfo = () => {
         <dt className={styles.label}>Publisher</dt>
         <dd className={`${styles.data} ${styles.dataBox}`}>
           <div
-            onClick={() =>
-              router.push({
-                pathname: '/',
-                query: {
-                  publishers: gameData?.publisher?.id,
-                },
-              })
-            }
             className={styles.tag}>
             {gameData?.publisher?.name}
           </div>
@@ -63,14 +47,6 @@ const GameInfo = () => {
             gameData.platforms.map((plt, idx) => (
               <div
                 key={idx}
-                onClick={() =>
-                  router.push({
-                    pathname: '/',
-                    query: {
-                      platforms: plt.id,
-                    },
-                  })
-                }
                 className={styles.tag}>
                 {plt.name}
               </div>

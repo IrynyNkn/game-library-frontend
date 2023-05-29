@@ -114,7 +114,7 @@ const Add = ({ platforms, genres, publishers, gameData }: AddGameProps) => {
       'image/png': []
     }
   });
-
+  console.log('selectedImage', selectedImage)
   const onSubmit = async (data: GameFormType) => {
     const formData = new FormData();
     formData.append('title', data.title);

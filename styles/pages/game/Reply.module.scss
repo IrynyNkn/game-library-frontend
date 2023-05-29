@@ -1,0 +1,87 @@
+@import 'styles/vars';
+
+@mixin btn {
+  padding: em(10) em(15);
+  border-radius: rem(30);
+  font-weight: 500;
+
+  transition: background-color 250ms ease-in;
+}
+
+.replyBox {
+  display: flex;
+  margin: em(10) 0 em(30);
+}
+
+.commentContainer {
+  margin-left: em(12);
+  flex: 1;
+  position: relative;
+}
+
+.commentInput {
+  outline: none;
+  border-bottom: $gray-border;
+  position: relative;
+
+  padding: em(8) 0;
+  margin-bottom: em(20);
+
+  //&[contenteditable][placeholder]:empty:before {
+  //  content: attr(placeholder);
+  //  position: absolute;
+  //  color: $gray-text;
+  //}
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background-color: $green-main;
+    transition: width 200ms ease-in-out;
+  }
+
+  &:focus {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.btnsWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.commentBtn {
+  @include btn();
+
+  margin-right: em(10);
+  color: #ffffff;
+  background-color: $green-main;
+
+  &:hover {
+    background-color: $green-darker;
+  }
+}
+
+.cancelBtn {
+  @include btn();
+
+  border: 1px solid $green-main;
+  color: $green-darker;
+
+  &:hover {
+    background-color: $green-light;
+  }
+}
+
+.parentReplyOwner {
+  @extend .replyUserMention;
+
+  position: absolute;
+  top: em(6);
+}

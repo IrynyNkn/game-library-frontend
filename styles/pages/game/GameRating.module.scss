@@ -1,0 +1,16 @@
+@import '../../vars';
+
+.ratingBox {
+  margin-top: em(14);
+}
+
+.iconWrapper {
+  color: $gray;
+  margin-right: em(12);
+  transition: color ease-in-out 150ms;
+  cursor: pointer;
+
+  &.active {
+    color: $green-main;
+  }
+}

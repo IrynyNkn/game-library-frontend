@@ -1,0 +1,107 @@
+@import 'styles/vars';
+
+.commentsBox {
+  max-width: 900px;
+}
+
+.title {
+  font-size: em(26);
+}
+
+.flexBox {
+  display: flex;
+}
+
+.commentBody {
+  margin-left: em(12);
+}
+
+.userInfoBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: em(8);
+}
+
+.userName {
+  font-weight: 600;
+}
+
+.timeStamp {
+  margin-left: em(24);
+  color: $gray-text;
+  position: relative;
+  font-size: em(14);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: rem(-12);
+    top: calc(50% - 2px);
+
+    width: rem(4);
+    height: rem(4);
+    border-radius: 50%;
+    background-color: $gray-text;
+  }
+}
+
+.actionsPanel {
+  display: flex;
+  align-items: center;
+
+  margin-top: em(14);
+}
+
+.replyBtn {
+  padding: 0;
+  margin-right: em(24);
+  text-transform: uppercase;
+  color: $gray-text;
+
+  transition: color 200ms ease-in-out;
+
+  &:hover {
+    color: $green-darker;
+  }
+}
+
+.likeWrapper {
+  color: $gray-text;
+  display: flex;
+  align-items: center;
+  margin-top: em(2);
+
+  cursor: pointer;
+  transition: color 200ms ease-in-out;
+
+  &:hover,
+  &.active {
+    color: $pastel-red;
+  }
+}
+
+.likesCount {
+  font-size: em(12);
+  margin-left: em(8);
+}
+
+.replies {
+  margin-left: em(72);
+  margin-top: em(20);
+}
+
+.nestedCommentBox {
+  margin-bottom: em(16);
+}
+
+.userMention {
+  @extend .replyUserMention;
+
+  margin-right: em(6);
+}
+
+.deleteCommentBtn {
+  @extend .table-action-btn;
+  margin-left: em(6);
+  transform: translateY(em(2));
+}
