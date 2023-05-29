@@ -15,7 +15,7 @@ const Card = ({ gameData }: CardProps) => {
       className={styles.card}
       onClick={() => router.push(`/games/${gameData.id}`)}>
       <div className={styles.imgBox}>
-        <img alt="game img" src={`${process.env.NEXT_PUBLIC_API_URL}/${gameData.imageLink}`} />
+        <img alt="game img" src={`${gameData.imageLink}`} />
       </div>
       <div className={styles.infoSection}>
         <p className={styles.name}>{gameData.title}</p>
