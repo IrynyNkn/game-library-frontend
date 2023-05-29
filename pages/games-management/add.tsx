@@ -114,12 +114,14 @@ const Add = ({ platforms, genres, publishers, gameData }: AddGameProps) => {
       'image/png': []
     }
   });
-  console.log('selectedImage', selectedImage)
+
   const onSubmit = async (data: GameFormType) => {
     const formData = new FormData();
     formData.append('title', data.title);
     formData.append('description', data.description);
-    formData.append('file', selectedImage as never as Blob);
+    if (selectedImage) {
+      formData.append('file', selectedImage as never as Blob);
+    }
     formData.append('publisherId', data.publisherId);
     formData.append('ageRestriction', data.ageRestriction);
     formData.append('releaseYear', data.releaseYear);
@@ -158,6 +160,7 @@ const Add = ({ platforms, genres, publishers, gameData }: AddGameProps) => {
         }
       );
       const result = await response.json();
+      console.log('GAME RESULT', result)
 
       if (result.data) {
         toast.success(

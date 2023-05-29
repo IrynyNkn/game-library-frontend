@@ -15,7 +15,6 @@ export default async function handler(
         },
       });
       const result = await response.json();
-      console.log('DELETE')
 
       if (!result.error && response.status < 300) {
         res.status(200).json({ message: result.message });

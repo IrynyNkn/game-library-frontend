@@ -20,7 +20,7 @@ const Home = ({ totalCount, games, skip }: HomePropsType) => {
   const endOffset = skip + itemsPerPage;
   const pageCount = Math.ceil(totalCount / itemsPerPage);
   const parsedSearchQuery = router.query.searchQuery;
-
+  console.log('GAMES', games)
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const pagginationHandler = async (event: any) => {
