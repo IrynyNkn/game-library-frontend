@@ -1,0 +1,166 @@
+@import 'styles/vars';
+
+.input-container {
+  width: 100%;
+  position: relative;
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+
+  & .input-label {
+    position: absolute;
+    top: 0;
+    transition: top 250ms ease-in-out, margin-left 250ms ease-in-out,
+      font-size 250ms ease-in-out;
+    font-size: 1.1em;
+    margin-left: 0.275em;
+    color: $gray-text;
+  }
+
+  & .input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1.5px solid $dark-gray-border;
+    outline: none;
+    font-size: 1em;
+    padding: 0.25em;
+    color: $dark-gray;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .input-label {
+        top: -1.375em;
+        font-size: 0.8em;
+        margin-left: 0.125em;
+      }
+    }
+  }
+
+  &.error {
+    & .input-label {
+      color: $error;
+    }
+
+    & .input {
+      border-bottom-color: $error;
+    }
+  }
+
+  & .error-message {
+    display: inline-block;
+    color: $error;
+    font-size: em(12);
+  }
+}
+
+.green-button {
+  background-color: $green-main;
+  color: #ffffff;
+  text-transform: uppercase;
+  height: em(60);
+  padding: 0 2.1875em;
+  margin-top: 1.4em;
+  transition: background-color 250ms ease-in-out;
+
+  &:hover {
+    background-color: $green-darker;
+  }
+}
+
+.backdrop {
+  visibility: hidden;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $light-gray-hover;
+
+  &.is-visible {
+    visibility: visible;
+  }
+}
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.drop-zone {
+  width: 100%;
+  height: rem(160);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  border: 1px solid $dark-gray-border;
+  border-top-left-radius: em(4);
+  border-top-right-radius: em(4);
+  border-bottom: none;
+
+  color: $gray;
+}
+
+.delete-action {
+  color: $error;
+}

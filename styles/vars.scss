@@ -1,0 +1,91 @@
+$dark-gray: #202121;
+$light-gray-hover: rgba(32, 33, 33, 0.4);
+$dark-gray-hover: rgba(32, 33, 33, 0.75);
+$white: #fdfdfd;
+$gray: #d9d9d9;
+$gray-secondary: #dce0df;
+$gray-border: 1px solid #e6eaea;
+$gray-hover: rgba(220, 224, 223, 0.4);
+$dark-gray-border: #dbe0df;
+$light-bg: #f6f8f5;
+$gray-text: #a6abab;
+$green-main: #49c5b6;
+$green-light: rgba(73, 197, 182, 0.35);
+$green-darker: #39988f;
+$pastel-red: #ff6061;
+$error: #c62828;
+
+@function em($pxVal) {
+  @return #{$pxVal/16}em;
+}
+
+@function rem($pxVal) {
+  @return #{$pxVal/16}rem;
+}
+
+@mixin button {
+  text-transform: uppercase;
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $white;
+  }
+}
+
+@mixin dark-button {
+  text-transform: uppercase;
+  background-color: $dark-gray;
+  color: #f4f7f6;
+  font-size: 0.875em;
+  font-weight: 500;
+  border: none;
+  padding: 1.5em 3em;
+  transition: background-color 250ms ease-in-out;
+
+  &:hover {
+    background-color: rgba(32, 33, 33, 0.92);
+  }
+}
+
+@mixin header-btn-label {
+  text-transform: uppercase;
+  font-size: 0.8125em;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tag {
+  color: $dark-gray;
+  font-weight: 500;
+  border: 1.2px solid #dcdfdf;
+  border-radius: em(30);
+  transition: color 250ms ease-in-out, border-color 250ms ease-in-out;
+  cursor: pointer;
+  font-size: em(14);
+
+  &:hover {
+    color: $green-main;
+    border-color: $green-main;
+  }
+}
+
+.replyUserMention {
+  display: inline-block;
+  background-color: $gray;
+  padding: em(2) em(4);
+  border-radius: em(4);
+}
+
+.table-action-btn {
+  padding: em(8) em(10);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 100ms ease-in-out;
+
+  &:hover {
+    background-color: $gray-hover;
+  }
+}

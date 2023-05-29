@@ -1,0 +1,51 @@
+@import "styles/vars";
+
+.headerWrap {
+  background-color: $pastel-red;
+  padding: em(24) em(12);
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  color: white;
+  letter-spacing: em(1.4);
+}
+
+.text {
+  padding: em(14) em(10) em(20) em(10);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding-bottom: em(20);
+}
+
+.button {
+  padding: em(4) em(20);
+}
+
+.deleteBtn {
+  @extend .button;
+  background-color: #d24545;
+  color: white;
+  margin-right: em(16);
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: $error;
+  }
+}
+
+.cancelBtn {
+  @extend .button;
+  color: $green-darker;
+  border: 1px solid $green-darker;
+  transition: background-color 200ms ease-in-out;
+
+  &:hover {
+    background-color: $green-darker;
+    color: white;
+  }
+}

@@ -1,0 +1,18 @@
+@import 'styles/vars';
+
+.userBadgeCircle {
+  width: em(60);
+  height: em(60);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &.small {
+    width: em(50);
+    height: em(50);
+  }
+}

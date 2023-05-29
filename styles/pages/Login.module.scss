@@ -1,0 +1,61 @@
+@import 'styles/vars';
+
+@mixin imageBg($url) {
+  width: 40%;
+  background-image: url(#{$url});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  @media screen  and (max-width: 800px){
+    width: 0;
+  }
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.backgroundLogin {
+  @include imageBg('/imgs/gamepads-bg.jpeg');
+}
+
+.backgroundSignup {
+  @include imageBg('/imgs/game-dino.jpeg');
+}
+
+.contentWrapper {
+  background-color: $light-bg;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.loginBox {
+  max-width: 28.125em;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-top: em(14);
+
+  & a {
+    color: $green-main;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+}

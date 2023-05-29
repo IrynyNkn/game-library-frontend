@@ -1,0 +1,111 @@
+@import 'styles/vars';
+
+.header {
+  color: #1a1a1a;
+  background-color: $light-bg;
+  border-bottom: $gray-border;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: rem(80);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.headerBox {
+  flex: 1;
+
+  @media screen  and (max-width: 450px){
+    display: none;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  & .loginButton {
+    @include dark-button;
+  }
+}
+
+.burgerMenu {
+  @extend .headerBox;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.burgerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
+  border-right: $gray-border;
+  cursor: pointer;
+
+  &:hover {
+    & .burgerMenuDash {
+      background: $dark-gray-hover;
+    }
+
+    & .menuLabel {
+      color: $dark-gray-hover;
+    }
+  }
+}
+
+.burgerMenuDash {
+  background: $dark-gray;
+  height: 3px;
+  width: 25px;
+  border-radius: 50px;
+  transition: background 250ms ease-in-out;
+}
+
+.burgerBtn {
+  @extend .burgerMenuDash;
+  position: relative;
+  justify-content: flex-start;
+
+  &::before,
+  &::after {
+    @extend .burgerMenuDash;
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    transform: translate(-12.4px, -6px);
+  }
+
+  &::after {
+    transform: translate(-12.4px, 6px);
+  }
+}
+
+.menuLabel {
+  @include header-btn-label;
+  margin-left: 1em;
+  transition: color 250ms ease-in-out;
+}
+
+//.overlay {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  width: 100vw;
+//  height: 100vh;
+//  background-color: $dark-gray-hover;
+//  opacity: 0;
+//  z-index: 100;
+//  visibility: hidden;
+//  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+//
+//  &.open {
+//    visibility: visible;
+//    opacity: 1;
+//  }
+//}

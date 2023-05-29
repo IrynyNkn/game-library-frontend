@@ -1,0 +1,145 @@
+@import 'styles/vars';
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: em(8);
+  border-style: hidden;
+
+  @media screen  and (max-width: 500px){
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.tableBlackRow {
+  background-color: $dark-gray;
+  color: $white;
+  border-radius: em(8);
+}
+
+.tableHead {
+  @extend .tableBlackRow;
+
+  th {
+    padding: em(10);
+    font-weight: 500;
+    text-align: left;
+
+    &:first-child {
+      border-top-left-radius: em(8);
+    }
+
+    &:last-child {
+      border-top-right-radius: em(8);
+      text-align: center;
+    }
+  }
+}
+
+.tableFooter {
+  @extend .tableBlackRow;
+
+  td {
+    padding: em(10);
+
+    &:first-child {
+      border-bottom-left-radius: em(8);
+    }
+
+    &:last-child {
+      border-bottom-right-radius: em(8);
+      text-align: right;
+    }
+  }
+}
+
+.tableBody {
+  width: 100%;
+
+  tr {
+    &:nth-of-type(n) {
+      background-color: $white;
+    }
+
+    &:nth-of-type(2n) {
+      background-color: rgba(220, 224, 223, 0.2);
+    }
+  }
+
+  td {
+    padding: em(8);
+
+    &:first-child {
+      font-weight: 600;
+    }
+
+    &:last-child {
+      text-align: center;
+    }
+  }
+}
+
+.tableActionsBtn {
+  @extend .table-action-btn;
+  display: inline-block;
+
+  &:first-of-type {
+    margin-right: em(4);
+  }
+}
+
+.editAction {
+  color: $green-main;
+}
+
+.footerBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footerItemsCount {
+  margin-right: em(16);
+  margin-top: em(-4);
+}
+
+.tablePage {
+  display: none;
+}
+
+.inputLabel {
+  position: relative;
+
+  & .input {
+    margin-bottom: em(30);
+    max-width: rem(360);
+
+    &::placeholder {
+      color: $gray-text;
+    }
+  }
+
+  & .inputMain {
+    padding-right: em(20);
+    max-width: rem(300);
+  }
+
+  &.withOffset {
+    & input {
+      padding-left: em(22) !important;
+    }
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  bottom: em(-2);
+}
+
+.searchBtn {
+  position: absolute;
+  right: em(12);
+  bottom: 0;
+}

@@ -1,0 +1,52 @@
+@import 'styles/vars';
+
+.gamesList {
+  @extend .wrapper;
+  padding: rem(30) 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: rem(24) rem(36);
+  
+  @media screen  and (max-width: 850px){
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen  and (max-width: 600px){
+    grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  padding: 0 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $light-bg;
+  height: 100%;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1;
+  margin-bottom: em(60);
+}
+
+.searchContainer {
+  margin-left: em(16);
+  margin-top: em(20);
+
+  & input {
+    margin-bottom: em(10) !important;
+  }
+}
+
+.emptyWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: em(60);
+}
+
+.emptyText {
+  font-size: em(20);
+}

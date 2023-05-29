@@ -1,0 +1,90 @@
+@import 'styles/vars';
+
+.sidebar {
+  background-color: $light-bg;
+  position: fixed;
+  left: -320px;
+  width: 320px;
+  height: 100%;
+  z-index: 100;
+  transition: left 300ms ease-in-out;
+
+  &.open {
+    left: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: $dark-gray-hover;
+  opacity: 0;
+  z-index: 100;
+  visibility: hidden;
+  transition: opacity 250ms ease-in-out, visibility 250ms ease-in-out;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.closeBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5em;
+  padding: 0 1.8em;
+  margin-top: 2px;
+}
+
+.closeLabel {
+  @include header-btn-label;
+  margin-right: 10px;
+  transition: color 250ms ease-in-out;
+}
+
+.closeButton {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    & .closeIcon path {
+      fill: $dark-gray-hover;
+    }
+
+    & .closeLabel {
+      color: $dark-gray-hover;
+    }
+  }
+}
+
+.closeIcon {
+  width: 18px;
+  cursor: pointer;
+
+  & path {
+    fill: #202121;
+    transition: fill 250ms ease-in-out;
+  }
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  height: 5em;
+  border-top: $gray-border;
+  padding: 0 1.875em;
+  font-size: 1.125em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease-in;
+
+  &:hover {
+    background-color: #fcfcfc;
+  }
+}

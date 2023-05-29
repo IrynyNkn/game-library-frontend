@@ -1,0 +1,22 @@
+@import 'styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logoImg {
+  width: 2.4em;
+  margin-bottom: 0.2em;
+}
+
+.logoTitle {
+  color: #000000;
+  font-family: 'Silkscreen', cursive;
+  font-size: 1em;
+  text-transform: uppercase;
+}
