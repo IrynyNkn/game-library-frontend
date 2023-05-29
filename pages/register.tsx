@@ -7,7 +7,6 @@ import { emailRegExp } from '../utils/regExp';
 import { useLoading } from '../utils/hooks/useLoading';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import { saveTokenToCookies } from '../utils/auth';
 
 const Register = () => {
   const { setLoading } = useLoading();
