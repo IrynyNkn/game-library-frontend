@@ -1,0 +1,164 @@
+@import 'styles/vars';
+
+@mixin box() {
+  max-width: rem(500);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  @extend .wrapper;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: em(60);
+  padding: em(16);
+}
+
+.title {
+  margin: em(20) 0 em(10);
+}
+
+.form {
+  @include box;
+}
+
+.inputWrapper {
+  margin-bottom: em(14);
+
+  &.error {
+    & .inputLabel {
+      color: $error;
+    }
+
+    & .input,
+    & .textarea {
+      border-color: $error;
+
+      &::placeholder {
+        color: $error;
+      }
+    }
+  }
+}
+
+.errorMsg {
+  color: $error;
+  font-size: em(12);
+  margin-top: em(2);
+}
+
+.input {
+  width: 100%;
+
+  outline: none;
+  border: 1px solid $dark-gray-border;
+  border-radius: em(4);
+
+  padding: em(12) em(10);
+  font-size: em(16);
+  font-weight: 400;
+
+  &::placeholder {
+    color: $gray-text;
+  }
+
+  &.error {
+    border-color: $error;
+
+    &::placeholder {
+      color: $error;
+    }
+  }
+}
+
+.inputLabel {
+  margin-bottom: em(4);
+  font-size: em(14);
+  color: $gray-text;
+}
+
+.textarea {
+  border: 1px solid $dark-gray-border;
+  border-radius: em(4);
+  outline: none;
+  resize: vertical;
+
+  width: 100%;
+
+  padding: em(12) em(10);
+
+  font-family: -apple-system, sans-serif;
+  font-size: em(16);
+
+  &::placeholder {
+    color: $gray-text;
+  }
+}
+
+.fileInput {
+  background-color: $green-main;
+  padding: em(6) em(12);
+  cursor: pointer;
+  color: $white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 250ms ease-in-out;
+
+  input[type='file'] {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $green-darker;
+  }
+}
+
+.icon {
+  margin-right: em(4);
+}
+
+.dropZone {
+  width: 100%;
+  height: rem(160);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $gray;
+}
+
+.dropzoneText {
+  position: absolute;
+  bottom: 35px;
+  font-size: em(14);
+}
+
+.uploadedImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  border-top-right-radius: em(4);
+  border-top-left-radius: em(4);
+}
+
+.userInfo {
+  @include box;
+  margin-bottom: em(10);
+}
+
+.infoBox {
+  display: flex;
+  margin-bottom: em(8);
+}
+
+.infoLabel {
+  margin-right: em(6);
+  font-weight: 500;
+}
